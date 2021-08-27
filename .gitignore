@@ -1,6 +1,8 @@
 # Node stuff
 /client/node_modules
 /server/node_modules
+package.json
+package-lock.json
 
 # Env
 /server/.env
