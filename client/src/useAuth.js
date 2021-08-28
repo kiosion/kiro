@@ -9,7 +9,7 @@ export default function useAuth(code) {
     // Authenticate user
     useEffect(() => {
         axios
-        .post('http://localhost:3001/login', {
+        .post('https://kiro.kio.dev/login', {
             code,
         })
         .then(res => {
@@ -28,7 +28,7 @@ export default function useAuth(code) {
         if (!refreshToken || !expiresIn) return // Return if no refresh token or expiresIn is set yet
         const interval = setInterval(() => {
             axios
-            .post('http://localhost:3001/refresh', {
+            .post('https://kiro.kio.dev/refresh', {
                 refreshToken,
             })
             .then(res => {
