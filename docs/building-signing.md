@@ -6,7 +6,7 @@
 - Sign electron package: *after* building if on windows. *before/during* building if on macos or linux
 	- electron-builder uses hooks 'afterPack' / 'beforeBuild' respectively
 	- `python3 -m castlabs_evs.vmp sign-pkg path/to/package-directroy` ( for streaming scope )
-- Add the previous command to 'electron-build` in package.json; it should look like `electron-builder x` 
+- Add the previous command to `electron-build` in package.json; it should look like `electron-builder x` 
 - Run `npm run build` to build both React & Electron
 
 # Resources:
