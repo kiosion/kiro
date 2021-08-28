@@ -9,3 +9,7 @@ package-lock.json
 
 # Replit
 .replit
+
+# Build stuff
+/client/build/
+/client/dist/
