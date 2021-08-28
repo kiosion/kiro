@@ -12,7 +12,7 @@ class App {
   }
 
   render() {
-    ipcRenderer.on('login-flow-resolve', (event, arg) => {
+    ipcRenderer.on('login-flow-resolve', (_event, arg) => {
       this.setState({
         code: arg
       })

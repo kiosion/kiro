@@ -9,7 +9,7 @@ app.use(cors())
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
 
-app.post('/refresh', (req, res) => {
+app.post('/api/v1/auth/refresh', (req, res) => {
     console.log("Token refresh called")
     const refreshToken = req.body.refreshToken
     const spotifyApi = new SpotifyWebApi({
@@ -33,7 +33,7 @@ app.post('/refresh', (req, res) => {
     })
 })
 
-app.post('/login', (req, res) => {
+app.post('/api/v1/auth/login', (req, res) => {
     const code = req.body.code
     const spotifyApi = new SpotifyWebApi({
         redirectUri: process.env['REDIRECT_URI'],
@@ -56,9 +56,8 @@ app.post('/login', (req, res) => {
     })
 })
 
-app.get('/lyrics', async (req, res) => {
-    const lyrics = 
-        (await lyricsFinder(req.query.artist, req.query.track) || "No lyrics availible :(")
+app.get('/api/v1/lyrics', async (req, res) => {
+    const lyrics = (await lyricsFinder(req.query.artist, req.query.track) || "No lyrics availible :(")
     res.json({ lyrics })
 })
 

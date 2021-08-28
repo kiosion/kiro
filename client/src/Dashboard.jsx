@@ -27,7 +27,7 @@ export default function Dashboard({ code }) {
     useEffect(() => {
         if (!playingTrack) return setLyrics('')
 
-        axios.get('https://kiro.kio.dev/lyrics', {
+        axios.get('https://kiro.kio.dev/api/v1/lyrics', {
             params: {
                 track: playingTrack.title,
                 artist: playingTrack.artist

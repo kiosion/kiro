@@ -9,7 +9,7 @@ export default function useAuth(code) {
     // Authenticate user
     useEffect(() => {
         axios
-        .post('https://kiro.kio.dev/login', {
+        .post('https://kiro.kio.dev/api/v1/auth/login', {
             code,
         })
         .then(res => {
@@ -19,7 +19,7 @@ export default function useAuth(code) {
             window.history.pushState({}, null, '/')
         })
         .catch(() => {
-            window.location = '/'
+            window.location = './' // TODO: Handle this correctly
         })
     }, [code])
 
@@ -28,7 +28,7 @@ export default function useAuth(code) {
         if (!refreshToken || !expiresIn) return // Return if no refresh token or expiresIn is set yet
         const interval = setInterval(() => {
             axios
-            .post('https://kiro.kio.dev/refresh', {
+            .post('https://kiro.kio.dev/api/v1/auth/refresh', {
                 refreshToken,
             })
             .then(res => {
@@ -36,7 +36,7 @@ export default function useAuth(code) {
                 setExpiresIn(res.data.expiresIn)
             })
             .catch(() => {
-                window.location = '/'
+                window.location = './' // TODO: Handle this correctly
             })
         }, (expiresIn - 60) * 1000)
 
