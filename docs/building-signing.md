@@ -1,15 +1,22 @@
-# Building & signing package:
+# Building / signing
+WIP :)
 
-- Install castlabs-evs: `python3 -m pip install --upgrade castlabs-evs`
-- Create an account as per the [castlabs documentation](https://github.com/castlabs/electron-releases/wiki/EVS#creating-an-evs-account)
-- Auth (or re-auth) using `python3 -m castlabs_evs.account reauth`
-- Sign electron package: *after* building if on windows. *before/during* building if on macos or linux
-	- electron-builder uses hooks 'afterPack' / 'beforeBuild' respectively
-	- `python3 -m castlabs_evs.vmp sign-pkg path/to/package-directroy` ( for streaming scope )
-- Add the previous command to `electron-build` in package.json; it should look like `electron-builder x` 
+
+## Instructions
+
+- Install castlabs-evs with python3: `python3 -m pip install --upgrade castlabs-evs`
+- Create an account as per the [castlabs documentation](https://github.com/castlabs/electron-releases/wiki/EVS#creating-an-evs-account), or auth with `python3 -m castlabs_evs.account reauth`
+- Signing the electron package takes place before code-signing if on macos or linux, after if on windows. electron-builder uses the hooks 'afterPack' / 'afterSign' respectively for this [(ex.)](https://www.electron.build/configuration/configuration#hooks)
+- Add `python3 -m castlabs_evs.vmp sign-pkg path/to/package-directroy` (for streaming scope) to `electron-build` in package.json with the correct hook:
+```
+"build": {
+  ...
+  "afterSign": "./myAfterSignHook.js"
+}
+```
 - Run `npm run build` to build both React & Electron
 
-# Resources:
+## Resources:
 
 - https://www.electron.build/configuration/configuration
 - https://github.com/electron/get#usage
