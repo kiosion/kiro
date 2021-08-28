@@ -3,12 +3,14 @@
   "version": "0.1.0",
   "private": true,
   "main": "public/electron.js",
+  "homepage": "./",
   "dependencies": {
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
     "axios": "^0.21.1",
     "bootstrap": "^5.1.0",
+    "cross-env": "^7.0.3",
     "electron-is-dev": "^2.0.0",
     "react": "^17.0.2",
     "react-bootstrap": "^1.6.1",
@@ -19,12 +21,13 @@
     "web-vitals": "^1.1.2"
   },
   "scripts": {
-    "dev": "concurrently -k \"npm start\" \"npm:electron\"",
-    "electron": "wait-on tcp:3000 && electron .",
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "react-start": "react-scripts start",
+    "react-build": "react-scripts build",
+    "react-test": "react-scripts test",
+    "react-eject": "react-scripts eject",
+    "electron-build": "electron-builder",
+    "build": "npm run react-build && npm run electron-build",
+    "start": "concurrently -k \"cross-env BROWSER=none npm run react-start\" \"wait-on http://localhost:3000 && electron .\""
   },
   "eslintConfig": {
     "extends": [
@@ -45,8 +48,20 @@
     ]
   },
   "devDependencies": {
-    "concurrently": "^6.2.1",
-    "electron": "^13.2.3",
+    "concurrently": "6.2.1",
+    "electron": "github:castlabs/electron-releases#v13.2.2-wvvmp",
+    "electron-builder": "^22.11.7",
     "wait-on": "^6.0.0"
+  },
+  "build": {
+    "appId": "dev.kio.kiro",
+    "win": {
+      "target": "portable"
+    },
+    "electronDownload": {
+      "mirror": "https://github.com/castlabs/electron-releases/releases/download/",
+      "customDir": "v13.2.2-wvvmp",
+      "version": "13.2.2-wvvmp"
+    }
   }
 }
