@@ -2,10 +2,13 @@
 Minimal spotify client. I'll finish this readme eventually :)
 
 ### Installation
--
+WIP.
+
+### Issues
+If you encounter a bug, before creating an issue, make sure it isn't already in the [todo list](todo.md).
 
 ### Building
-See [building-signing.md](docs/building-signing.md)
+See [building-signing](docs/building-signing.md)
 
 ### Created with
 - [React](https://github.com/facebook/react)
