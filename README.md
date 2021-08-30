@@ -1,14 +1,14 @@
 # kiro
-Minimal spotify client. I'll finish this readme eventually :)
+Minimal desktop spotify client.
 
 ### Installation
-WIP.
+See [installation.md](docs/installation.md) (work in progress)
 
 ### Issues
-If you encounter a bug, before creating an issue, make sure it isn't already in the [todo list](todo.md).
+If you encounter a bug, before creating an issue, make sure it isn't already a konwon issue noted in [todo.md](todo.md).
 
 ### Building
-See [building-signing](docs/building-signing.md)
+See [building-signing.md](docs/building-signing.md)
 
 ### Created with
 - [React](https://github.com/facebook/react)
