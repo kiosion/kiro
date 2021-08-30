@@ -5,7 +5,7 @@ Minimal desktop spotify client.
 See [installation.md](docs/installation.md) (work in progress)
 
 ### Issues
-If you encounter a bug, before creating an issue, make sure it isn't already a konwon issue noted in [todo.md](todo.md).
+Before creating an issue, make sure it isn't already noted in [todo.md](todo.md).
 
 ### Building
 See [building-signing.md](docs/building-signing.md)
