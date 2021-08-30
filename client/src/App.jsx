@@ -1,11 +1,18 @@
-import { ipcRenderer } from 'electron'
+import React, { Component } from 'react'
 
 import 'bootstrap/dist/css/bootstrap.min.css'
 import Login from './Login'
 import Dashboard from './Dashboard'
 
-class App {
+const { ipcRenderer } = window.require('electron')
+
+ipcRenderer.on('log-to-renderer', (_event, arg) => {
+  console.log(arg)
+})
+
+class App extends Component {
   constructor() {
+    super()
     this.state = {
       code: ''
     }
@@ -17,7 +24,7 @@ class App {
         code: arg
       })
     });
-    return this.state.code !== '' ? <Dashboard code={this.state.code} /> : <Login />
+    return (this.state.code !== '') ? <Dashboard code={this.state.code} /> : <Login />
   }
 }
 

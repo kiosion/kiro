@@ -1,0 +1,1 @@
+"./dist/win-unpacked/kiro.exe" --trace-warnings && echo && read -s -p "Press ENTER to continue |> "
