@@ -6,7 +6,7 @@ import { spawn } from 'child_process';
  */
 const subprocess = (function() {
     return spawn('python', [
-      "-u", "-m", "castlabs_evs.vmp", "sign-pkg", "build/static/"
+      "-u", "-m", "castlabs_evs.vmp", "sign-pkg", "dist/win-unpacked/"
     ]);
   })();
 
