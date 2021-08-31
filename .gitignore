@@ -12,3 +12,4 @@
 # Build stuff
 /client/build/
 /client/dist/
+/client/evs.js
