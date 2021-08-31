@@ -1,7 +1,13 @@
 # kiro
 Minimal desktop spotify client.
 
-<img src="ui.jpg">
+### Themes
+
+#### Dark theme...
+<img src="ui-dark.jpg" width="640" height="373">
+
+#### Light theme...
+<img src="ui-light.jpg" width="640" height="373">
 
 ### Installation
 See [installation.md](docs/installation.md) (work in progress)
