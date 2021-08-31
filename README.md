@@ -1,6 +1,8 @@
 # kiro
 Minimal desktop spotify client.
 
+<img src="ui.jpg">
+
 ### Installation
 See [installation.md](docs/installation.md) (work in progress)
 
