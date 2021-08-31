@@ -10,6 +10,7 @@ Instructions for building/signing then packaging kiro into a desktop electron ap
 
 - Create an account for EVS as per the [documentation](https://github.com/castlabs/electron-releases/wiki/EVS#creating-an-evs-account), or auth with `python3 -m castlabs_evs.account reauth`
 - Signing the electron package takes place before code-signing if on macos or linux, after if on windows. electron-builder uses the hooks 'afterPack' / 'afterSign' respectively for this [(ex)](https://www.electron.build/configuration/configuration#hooks)
+- Create a file in the 'client' directory with the filename `evs.js`. This is where you'll put the EVS sign command (python3 -m castlabs_evs.vmp sign-pkg path/to/your/package-directory) 
 
 ### Windows
 
