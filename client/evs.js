@@ -1,19 +1,14 @@
-const path = require('path')
-const {spawn} = require('child_process')
+import { spawn } from 'child_process';
 
 /**
- * Run python script, pass in `-u` to not buffer console output 
+ * Run python script
  * @return {ChildProcess}
  */
-function runScript(){
-  return spawn('python', [
-    "-u", "-m",
-    path.join(__dirname, 'castlabs_evs.vmp'),
-    "sign-pkg", "build/static/"
-  ]);
-}
-
-const subprocess = runScript()
+const subprocess = (function() {
+    return spawn('python', [
+      "-u", "-m", "castlabs_evs.vmp", "sign-pkg", "build/static/"
+    ]);
+  })();
 
 // print output of script
 subprocess.stdout.on('data', (data) => {
