@@ -9,15 +9,15 @@ Instructions for building/signing then packaging kiro into a desktop electron ap
 ## Instructions
 
 - Create an account for EVS as per the [documentation](https://github.com/castlabs/electron-releases/wiki/EVS#creating-an-evs-account), or auth with `python3 -m castlabs_evs.account reauth`
-- Signing the electron package takes place before code-signing if on macos or linux, after if on windows. electron-builder uses the hooks 'afterPack' / 'afterSign' respectively for this [(ex.)](https://www.electron.build/configuration/configuration#hooks)
-- Add `python3 -m castlabs_evs.vmp sign-pkg path/to/package-directroy` (for streaming scope) to `electron-build` in package.json with the correct hook:
-```
-"build": {
-  ...
-  "afterSign": "./myAfterSignHook.js"
-}
-```
-- Run `npm run build` to build both React & Electron
+- Signing the electron package takes place before code-signing if on macos or linux, after if on windows. electron-builder uses the hooks 'afterPack' / 'afterSign' respectively for this [(ex)](https://www.electron.build/configuration/configuration#hooks)
+
+### Windows
+
+- Run `npm run build:win`
+
+### Mac/Linux
+
+- Run `npm run build:mac`
 
 ## Resources:
 
