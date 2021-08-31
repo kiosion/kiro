@@ -7,7 +7,7 @@ import SpotifyWebApi from 'spotify-web-api-node'
 import axios from 'axios'
 
 const spotifyApi = new SpotifyWebApi({
-    clientID: "63fed822c0e24c0d9e54350fa259fdf1",
+    clientID: "63fed822c0e24c0d9e54350fa259fdf1", //TODO: set clientID thru global var instead of hardcoding
 })
 
 export default function Dashboard({ code }) {
@@ -62,7 +62,7 @@ export default function Dashboard({ code }) {
                     artist: track.artists[0].name,
                     title: track.name,
                     uri: track.uri,
-                    albumUrl: smallestAlbumImage.url
+                    albumUrl: smallestAlbumImage.url //TODO: Return medium-sized image to show on click.
                 }
             }))
         })
@@ -77,7 +77,7 @@ export default function Dashboard({ code }) {
                 <Form.Control 
                     type="text" 
                     className="form-control" 
-                    id="form1" 
+                    id="searchbox" 
                     placeholder="Search..." 
                     value={search} 
                     onChange={e => setSearch(e.target.value)}
@@ -89,7 +89,7 @@ export default function Dashboard({ code }) {
                     <TrackSearchResult track={track} key={track.uri} whichTrack={whichTrack}/>
                 ))}
                 {searchResults.length === 0 && (
-                    <div className="text-center" style={{ whiteSpace: "pre"}}>
+                    <div className="text-center" style={{ whiteSpace: "pre", color: '#ffffff'}}>
                         {lyrics}
                     </div>
                 )}
