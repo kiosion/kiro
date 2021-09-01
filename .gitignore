@@ -12,3 +12,6 @@
 # Build stuff
 /client/build/
 /client/dist/
+
+# MacOS Sys Files
+*.DS_Store
