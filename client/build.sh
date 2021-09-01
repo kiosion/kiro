@@ -1,0 +1,1 @@
+npm run build:win && echo && read -s -p "Press ENTER to continue |> "

@@ -24,7 +24,6 @@
     "react-eject": "react-scripts eject",
     "electron-build": "electron-builder",
     "build:win": "npm run react-build && npm run electron-build",
-    "build:mac": "npm run react-build && npm run electron-build",
     "start": "concurrently -k \"cross-env BROWSER=none npm run react-start\" \"wait-on http://localhost:3000 && electron .\""
   },
   "eslintConfig": {
@@ -52,14 +51,10 @@
     "wait-on": "^6.0.0"
   },
   "build": {
-    "appId": "dev.kio.kiro",
-    "mac": {
-      "target": "portable",
-      "afterPack": "./evs.js"
-    },
+    "appId": "com.electron.kiro",
+    "afterSign": "./evs.js",
     "win": {
-      "target": "portable",
-      "afterSign": "./evs.js"
+      "target": "portable"
     },
     "electronDownload": {
       "mirror": "https://github.com/castlabs/electron-releases/releases/download/",

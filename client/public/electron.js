@@ -5,7 +5,6 @@ const isDev = require('electron-is-dev');
 
 const log = (...arg) => {
     console.log('[MAIN] ', ...arg, '\n');
-    ipcMain.emit('log-to-renderer', log);
 };
 
 const createWindow = () => {
@@ -40,6 +39,7 @@ const createLoginPopout = (url) => {
         height: 600,
         autoHideMenuBar: true,
         parent: BrowserWindow.getFocusedWindow(),
+        modal: true,
         webPreferences: {
             nodeIntegration: true,
             contextIsolation: false,
@@ -65,16 +65,15 @@ app.on('widevine-error', (error) => {
     process.exit(1);
   });
 
-ipcMain.handle('login-flow-initiate', async (_event, arg) => {
+ipcMain.handle('login-flow-initiate', (event, arg) => {
     log('login-flow-initiate', arg);
-    
     let popout = createLoginPopout(arg);
     popout.addListener('page-title-updated', (_event, title) => {
         log('page-title-updated', title);
         if (title === 'success') {
             let code = popout.webContents.getURL().split('code=')[1];
-            ipcMain.emit('login-flow-success', code);
-            log('login-flow-success', code);
+            event.sender.send('login-flow-resolve', code);
+            log('login-flow-resolve', code);
             popout.close();
         }
     });
