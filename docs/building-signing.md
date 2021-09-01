@@ -2,10 +2,10 @@
 Instructions for building/signing Kiro into a desktop electron app, capable of playing Widevine-protected DRM content.
 
 ## Dependencies
-- Node.js + NPM
+- Node.js + NPM 12.x+
 - Python 3.7+
-- castlabs-evs (`python3 -m pip install --upgrade castlabs-evs`)
-- electron-builder (`npm i electron-builder`)
+- castlabs-evs 1.1.0+
+- electron-builder 22.11+
 
 ## Instructions
 
@@ -16,7 +16,7 @@ Instructions for building/signing Kiro into a desktop electron app, capable of p
 
 ### Windows
 
-- Run `npm run build:win`
+- Run `npm run build:win` from `client`
 
 ### Mac/Linux
 
