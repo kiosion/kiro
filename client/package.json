@@ -1,6 +1,17 @@
 {
   "name": "kiro",
   "version": "0.1.0",
+  "description": "A simple Spotify desktop client.",
+  "author": {
+    "name": "kiosion",
+    "email": "max@kio.dev"
+  },
+  "contributors": [
+    {
+      "name": "toastythetoaster",
+      "email": "toast@isota.ch"
+    }
+  ],
   "private": true,
   "main": "public/electron.js",
   "homepage": "./",
