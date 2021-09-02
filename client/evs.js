@@ -1,9 +1,6 @@
 const { spawn } = require('child_process');
 
-/**
- * Run python script
- * @return {ChildProcess}
- */
+// pass python script + params
 const subprocess = (function() {
     return spawn('python', [
       "-u", "-m", "castlabs_evs.vmp", "sign-pkg", "dist/win-unpacked/"
