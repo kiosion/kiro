@@ -1,6 +1,8 @@
 # Building / signing
 Instructions for building/signing Kiro into a desktop electron app, capable of playing Widevine-protected DRM content.
 
+Please note that Kiro is still in development. Building this repo as-is won't result in a functional program :(
+
 ## Dependencies
 - Node.js + NPM 12.x+
 - Python 3.7+
