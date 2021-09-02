@@ -9,7 +9,7 @@
 
 ### Features
 - User library integration (Playlists, saved songs/albums/artists etc)
-- 
+- Support for custom themes/colour palettes
 
 ### Styling
 - Finalize UI fonts & icons
