@@ -6,6 +6,7 @@
     - Integration with spotify-web-api-node
     - Support for audio playback & volume control
 - Custom electron title bar (component done!)
+    - Export SVGs from Affinity, use instead of FA icons
 
 ### Features
 - User library integration (Playlists, saved songs/albums/artists etc)
