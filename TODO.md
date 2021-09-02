@@ -1,6 +1,16 @@
 # TODO
 
-- [x] Finish auth flow, make sure device ID is generated & stored properly
-- [x] Fix popup window behaviour (multiple windows)
-- [ ] Fix styling, player not loading properly on song play
-- [ ] Fix Winevide auth returning 400 error (evs signing?)
+### Bugs / Urgent
+- Convert all elements to components
+- Player bar
+    - Integration with spotify-web-api-node
+    - Support for audio playback & volume control
+- Custom electron title bar (component done!)
+
+### Features
+- User library integration (Playlists, saved songs/albums/artists etc)
+- 
+
+### Styling
+- Finalize UI fonts & icons
+- Linear gradients for headers/player bar
