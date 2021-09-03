@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react'
 import useAuth from './useAuth'
 import Player from './Player'
 import TrackSearchResult from './TrackSearchResult'
-import { Container, Form } from 'react-bootstrap'
 import SpotifyWebApi from 'spotify-web-api-node'
 import axios from 'axios'
 
@@ -71,30 +70,30 @@ export default function Dashboard({ code }) {
     }, [search, accessToken])
 
     // Render page
-    return (
-        <Container className="d-flex flex-column py-2" style={{ height: "100vh", width: "60vw" }}>
-            <div className="form-label-group">
-                <Form.Control 
-                    type="text" 
-                    className="form-control" 
-                    id="searchbox" 
-                    placeholder="Search..." 
-                    value={search} 
-                    onChange={e => setSearch(e.target.value)}
-                    style={{ backgroundColor:'#000000', color:'#ffffff',}}
-                />                
-            </div>
-            <div className="flex-grow-1 my-2" style={{ overflowY: "auto" }}>
-                {searchResults.map(track => (
-                    <TrackSearchResult track={track} key={track.uri} whichTrack={whichTrack}/>
-                ))}
-                {searchResults.length === 0 && (
-                    <div className="text-center" style={{ whiteSpace: "pre", color: '#ffffff'}}>
-                        {lyrics}
-                    </div>
-                )}
-            </div>
-            <div><Player accessToken={accessToken} trackUri={playingTrack?.uri}/></div>
-        </Container>
-    )
+    // return (
+    //     <Container className="d-flex flex-column py-2" style={{ height: "100vh", width: "60vw" }}>
+    //         <div className="form-label-group">
+    //             <Form.Control 
+    //                 type="text" 
+    //                 className="form-control" 
+    //                 id="searchbox" 
+    //                 placeholder="Search..." 
+    //                 value={search} 
+    //                 onChange={e => setSearch(e.target.value)}
+    //                 style={{ backgroundColor:'#000000', color:'#ffffff',}}
+    //             />                
+    //         </div>
+    //         <div className="flex-grow-1 my-2" style={{ overflowY: "auto" }}>
+    //             {searchResults.map(track => (
+    //                 <TrackSearchResult track={track} key={track.uri} whichTrack={whichTrack}/>
+    //             ))}
+    //             {searchResults.length === 0 && (
+    //                 <div className="text-center" style={{ whiteSpace: "pre", color: '#ffffff'}}>
+    //                     {lyrics}
+    //                 </div>
+    //             )}
+    //         </div>
+    //         <div><Player accessToken={accessToken} trackUri={playingTrack?.uri}/></div>
+    //     </Container>
+    // )
 }

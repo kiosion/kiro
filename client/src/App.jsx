@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 
-import 'bootstrap/dist/css/bootstrap.min.css'
 import Login from './Login'
 import Dashboard from './Dashboard'
 
@@ -20,11 +19,11 @@ class App extends Component {
   }
 
   clickHandler(AUTH_URL) {
-    console.log('[App.jsx] [clickHandler] event: ')
+    console.log('[App.jsx] [clickHandler]')
 
     // if (e.ctrlKey || e.shiftKey || e.altKey) {
     //     ipcRenderer.invoke('login-flow-initiate', 'https://www.youtube.com/watch?v=jeg_TJvkSjg')
-    //     console.log(`[Login.jsx] [clickHandler] ipcRenderer.invoke('login-flow-initiate', 'https://www.youtube.com/watch?v=jeg_TJvkSjg')`)
+    //     console.log(`[App.jsx] [clickHandler] ipcRenderer.invoke('login-flow-initiate', 'https://www.youtube.com/watch?v=jeg_TJvkSjg')`)
     // }
 
     ipcRenderer.invoke('login-flow-initiate', AUTH_URL)

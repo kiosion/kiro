@@ -26,10 +26,6 @@ const createWindow = () => {
             ? 'http://localhost:3000'
             : `file://${path.join(__dirname, '../build/index.html')}`
     );
-
-    if (isDev) {
-        win.webContents.openDevTools({ mode: 'detach' });
-    }
 }
 
 const createLoginPopout = (url) => {
@@ -51,10 +47,6 @@ const createLoginPopout = (url) => {
 
     win.loadURL(url);
 
-    if (isDev) {
-        win.webContents.openDevTools({ mode: 'detach' });
-    }
-
     return win;
 }
 
@@ -70,7 +62,7 @@ ipcMain.handle('login-flow-initiate', (event, arg) => {
     let popout = createLoginPopout(arg);
     popout.addListener('page-title-updated', (_event, title) => {
         log('page-title-updated', title);
-        if (title === 'success') {
+        if (title === 'success' || (title === 'Kiro' && isDev)) {
             let code = popout.webContents.getURL().split('code=')[1];
             event.sender.send('login-flow-resolve', code);
             log('login-flow-resolve', code);

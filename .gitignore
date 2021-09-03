@@ -12,3 +12,7 @@
 # Build stuff
 /client/build/
 /client/dist/
+
+# random stuff
+/client/public/images/temp/
+/client/src/fonts/
