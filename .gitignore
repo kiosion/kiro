@@ -16,3 +16,5 @@
 # random stuff
 /client/public/images/temp/
 /client/src/fonts/
+# MacOS Sys Files
+*.DS_Store

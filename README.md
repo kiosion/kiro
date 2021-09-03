@@ -1,24 +1,27 @@
 # kiro
-Minimal desktop spotify client.
+Kiro is a modern-styled desktop spotify client, with some added functionality over the official client (support for theming/lyrics). Keep reading below to check out the included themes, as well as instructions for installation and building the application yourself.
 
-### Themes
+## Themes
 
-#### Dark theme...
-<img src="ui-dark.jpg" width="640" height="373">
+### Galaxy dark (default)
+<img src="ui-dark.jpg">
 
-#### Light theme...
-<img src="ui-light.jpg" width="640" height="373">
+### Galaxy light (included)
+<img src="ui-light.jpg">
 
-### Installation
-See [installation.md](docs/installation.md) (work in progress)
+You can at a preview of [all availible themes](docs/themes.md), or view the documentation on [creating your own](docs/themes.md#custom).
 
-### Issues
-Before creating an issue, make sure it isn't already noted in [todo.md](todo.md).
+## Installation
+See [docs/installation](docs/installation.md) (work in progress)
 
-### Building
-See [building-signing.md](docs/building-signing.md)
+## Issues
+Before reporting an issue, make sure it isn't already noted in [todo.md](TODO.md). 
+If you know how to fix the issue, feel free to submit a pull request and I'll review it.
 
-### Created with
+## Building
+See [docs/building-signing](docs/building-signing.md)
+
+## Created with
 - [React](https://github.com/facebook/react)
 - [castlabs-electron](https://github.com/castlabs/electron-releases)
 - [spotify-web-api-node](https://github.com/thelinmichael/spotify-web-api-node)

@@ -9,14 +9,14 @@ const log = (...arg) => {
 
 const createWindow = () => {
     const win = new BrowserWindow({
-        width: 800,
-        height: 600,
+        width: 1280,
+        height: 640,
         autoHideMenuBar: true,
         webPreferences: {
             nodeIntegration: true,
             contextIsolation: false,
             enableRemoteModule: true,
-            webSecurity: false,
+            webSecurity: false, // TODO: Test with 'true'
             sandbox: false
         }
     });
@@ -31,8 +31,8 @@ const createWindow = () => {
 const createLoginPopout = (url) => {
     log('createLoginPopout', url);
     const win = new BrowserWindow({
-        width: 800,
-        height: 600,
+        width: 600,
+        height: 800,
         autoHideMenuBar: true,
         parent: BrowserWindow.getFocusedWindow(),
         modal: true,
