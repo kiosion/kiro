@@ -9,7 +9,7 @@ Kiro is a modern-styled desktop spotify client, with some added functionality ov
 ### Galaxy light (included)
 <img src="ui-light.jpg">
 
-You can at a preview of [all availible themes](docs/themes.md), or view the documentation on [creating your own](docs/themes.md#custom).
+You can at a preview of [all available themes](docs/themes.md), or view the documentation on [creating your own](docs/themes.md#custom).
 
 ## Installation
 See [docs/installation](docs/installation.md) (work in progress)
